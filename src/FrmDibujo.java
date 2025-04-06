@@ -52,9 +52,8 @@ public class FrmDibujo extends JFrame {
                 super.paintComponent(g);
                 lista.dibujarTrazos(g, nodoSeleccionado);
 
-                // Dibujar trazo temporal si se está trazando
                 if (trazando) {
-                    g.setColor(Color.BLUE); // Color para el trazo temporal
+                    g.setColor(Color.BLUE);
                     switch (opciones[ComboBox.getSelectedIndex()]) {
                         case "Linea":
                             g.drawLine(x, y, xTemp, yTemp);
@@ -109,14 +108,13 @@ public class FrmDibujo extends JFrame {
             }
         });
 
-        // 📌 **Nuevo Listener para actualizar las coordenadas temporales**
         panel.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 if (trazando) {
                     xTemp = e.getX();
                     yTemp = e.getY();
-                    panel.repaint(); // Redibujar para mostrar el trazo temporal
+                    panel.repaint();
                 }
             }
         });
@@ -165,12 +163,12 @@ public class FrmDibujo extends JFrame {
         String rutaArchivo = Archivo.elegirArchivo();
         if (!rutaArchivo.isEmpty()) {
             if (!rutaArchivo.endsWith(".dbj")) {
-                rutaArchivo += ".dbj"; // Asegurar extensión
+                rutaArchivo += ".dbj";
             }
             if (Archivo.guardarArchivo(rutaArchivo, lista.obtenerDatos())) {
-                JOptionPane.showMessageDialog(this, "Dibujo guardado exitosamente.");
+                JOptionPane.showMessageDialog(this, "El dibujo fue guardado sin problemas.");
             } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar el archivo.");
+                JOptionPane.showMessageDialog(this, "No se pudo guardar el Archivo.");
             }
         }
     }
@@ -180,7 +178,7 @@ public class FrmDibujo extends JFrame {
         if (!rutaArchivo.isEmpty()) {
             lista.cargarDesdeArchivo(rutaArchivo);
             panel.repaint();
-            JOptionPane.showMessageDialog(this, "Dibujo cargado exitosamente.");
+            JOptionPane.showMessageDialog(this, "El dibujo fue cargado con exito.");
         }
     }
 }
