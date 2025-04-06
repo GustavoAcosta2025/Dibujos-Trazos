@@ -73,8 +73,6 @@ public class FrmDibujo extends JFrame {
 
         btnSeleccionar.setIcon(new ImageIcon(getClass().getResource("/imagenes/seleccionar.png")));
         btnSeleccionar.setToolTipText("Seleccionar");
-        btnSeleccionar.setFocusable(false); // Quita el borde de selección
-        btnSeleccionar.setPreferredSize(new Dimension(40, 40)); // Tamaño razonable
         btnSeleccionar.addActionListener(e -> btnSeleccionarClick());
         tbDibujo.add(btnSeleccionar);
 
@@ -121,22 +119,16 @@ public class FrmDibujo extends JFrame {
 
         btnEliminar.setIcon(new ImageIcon(getClass().getResource("/imagenes/eliminar.png")));
         btnEliminar.setToolTipText("Eliminar");
-        btnEliminar.setFocusable(false);
-        btnEliminar.setPreferredSize(new Dimension(40, 40));
         btnEliminar.addActionListener(e -> btnEliminarClick());
         tbDibujo.add(btnEliminar);
 
         btnGuardar.setIcon(new ImageIcon(getClass().getResource("/imagenes/guardar.png")));
         btnGuardar.setToolTipText("Guardar");
-        btnGuardar.setFocusable(false);
-        btnGuardar.setPreferredSize(new Dimension(40, 40));
         btnGuardar.addActionListener(e -> btnGuardarClick());
         tbDibujo.add(btnGuardar);
 
         btnCargar.setIcon(new ImageIcon(getClass().getResource("/imagenes/cargar.png")));
         btnCargar.setToolTipText("Cargar");
-        btnCargar.setFocusable(false);
-        btnCargar.setPreferredSize(new Dimension(40, 40));
         btnCargar.addActionListener(e -> btnCargarClick());
         tbDibujo.add(btnCargar);
 
