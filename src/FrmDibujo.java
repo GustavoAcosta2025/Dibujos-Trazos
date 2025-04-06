@@ -30,7 +30,7 @@ public class FrmDibujo extends JFrame {
     private JToolBar tbDibujo;
     private JPanel panel;
 
-    int x, y, xTemp, yTemp; // Coordenadas de inicio y temporales
+    int x, y, xTemp, yTemp;
     boolean trazando = false;
 
     public FrmDibujo() {
